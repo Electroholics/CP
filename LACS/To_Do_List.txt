@@ -5,3 +5,16 @@ Todo For Ashutosh Kumar
 
 Database Structure : //Comma Seperator
 S.no || colid1 || colid2 || time ||
+
+
+/** Setting up GDrive Sync **/
+
+Setting up :
+
+$ sudo apt-get install software-properties-common python-software-properties
+$ sudo add-apt-repository ppa:nilarimogard/webupd8
+$ sudo apt-get update
+$ sudo apt-get install grive
+
+
+/** End **/
