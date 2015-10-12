@@ -1,3 +1,7 @@
 /**
 Todo For Ashutosh Kumar
 **/
+
+
+Database Structure : //Comma Seperator
+S.no || colid1 || colid2 || time ||
