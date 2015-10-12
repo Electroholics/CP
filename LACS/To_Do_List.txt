@@ -18,3 +18,7 @@ $ sudo apt-get install grive
 
 
 /** End **/
+
+
+Resources:
+https://www.maketecheasier.com/access-sync-google-drive-in-ubuntu/
