@@ -1,0 +1,4 @@
+Link to MFRC522-Pi interface:
+1. https://github.com/mj3052/MFRC522-Pi
+2. http://geraintw.blogspot.in/2014/01/rfid-and-raspberry-pi.html
+3. https://github.com/miguelbalboa/rfid
