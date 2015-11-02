@@ -1,0 +1,60 @@
+Software Requirements
+1)The First step is flash the sd card with NOOBS
+	     Download NOOBS from the raspberrypi.org downloads page
+    Insert a (4 GB+) SD Card into your computer
+        If you want to save space on the SD Card, you can delete some of the images inside the os folder in the NOOBS zip file that you don't want to use.
+    Format the disk
+      Windows
+        Download and install the SD Association's Formatting tool from https://www.sdcard.org/downloads/formatter_4/eula_windows/
+        Open the Application you have just installed
+        Set "FORMAT SIZE ADJUSTMENT" to ON in the Options menu.
+        Make sure you have selected the Drive your SD Card is inserted in
+        Click "Format"
+      Mac
+        Download and install the SD Association's Formatting tools from https://www.sdcard.org/downloads/formatter_4/eula_mac/
+        Select "Overwrite format"
+        Make sure you have selected your SD Card, and not something else
+        Click "Format"
+      Linux
+        Use gparted (or the command-line version parted if you prefer), if you don't have it, install it as you usually would.
+        Format the entire disk as FAT32 (FAT16 will not work! Make sure you select the correct disk!)
+    Extract the file you downloaded 
+    Copy the files you just extracted to your SD Card
+    For more information visit - http://elinux.org/RPi_Easy_SD_Card_Setup
+2)Next Step is to enable SPI device 
+		sudo raspi-config
+	The sudo is required because you will be changing files that you do not own as the pi user
+		A GUI interface will be enabled
+		Select Advanced Settings-->SPI interface-->Enable
+	The raspi-config is also useful for many other purpose(To enable I2C,reboot)
+	OFFICIAL DOCUMENTATION-https://www.raspberrypi.org/documentation/configuration/raspi-config.md
+3)Downloading and Installing official library to enable SPI commuication with Python
+		git clone https://github.com/lthiery/SPI-Py
+		cd SPI-Py
+		sudo python setup.py install
+	ERROR HANDLING
+		ERROR 1 - spi.c:20:20: fatal error: Python.h: No such file or directory.
+		SOLUTION - sudo apt-get install python-dev
+		ERROR 2 - If you run into an error that states that insufficient space is available while installing anything.
+		SOLUTION -  sudo raspi-config
+					-->Expand filesystem
+4)The MFRC522 package is also required to communicate RFID Tag used in the project.
+	git clone https://github.com/mxgxw/MFRC522-python
+	cd MFRC522-python
+	cp MFRC522.py <relative or absolute path of your directory>
+5)Now you need to install GPIO for python
+	wget https://pypi.python.org/packages/source/R/RPi.GPIO-0.5.4.tar.gz
+	tar zxf RPi.GPIO-0.5.4.tar.gz
+	cd RPi.GPIO-0.5.4
+	sudo python setup.py install
+6)After that we can download the source code for this project
+	git clone <git link>
+	cd <dir>
+	sudo python <main_file.py> 
+
+Hardware Requirements
+1)Raspberry Pi Model B+
+2)Switch Mode Power Supply
+3)Interfacing MI-Fare 13.56 MHz based RFID reader
+
+
