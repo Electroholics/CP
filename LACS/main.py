@@ -42,14 +42,15 @@ while continue_reading:
         # Get the UID of the card
         (status,uid) = MIFAREReader.MFRC522_Anticoll()
         print uid
+		#Creating the Log
+	software.log(uid) 
         # If we have the UID, continue
+
         authenticated = software.auth(uid)
-        if authenticated == 1:
-            # Print UID
-            print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
-            GPIO.output(29,False)
-            software.log(uid)
+        if int(authenticated) == 1:
+			GPIO.output(29,False)
         else:
             print "Authentication error"
             #Adding delay of 0.1 sec for user to enter
-    time.sleep(0.1)
+	
+	time.sleep(0.1)
