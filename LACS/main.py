@@ -7,8 +7,8 @@ import signal
 import time
 import software
 
-
 continue_reading = True
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)  #SETTING UP GPIO BOARD
 GPIO.setup(29,GPIO.OUT)   #SETTING PIN 29 AS OUTPUT PIN TO RELAY 
 GPIO.output(29,True)    #SETTING INITIAL VALUE AS TRUE AS RELAY IS TRIGGERED ON GROUND
@@ -38,18 +38,18 @@ while continue_reading:
 
     # If a card is found
     if status == MIFAREReader.MI_OK:
-        print "Card detected"
-    
-    # Get the UID of the card
-    (status,uid) = MIFAREReader.MFRC522_Anticoll()
-    # If we have the UID, continue
-    authenticated = software.auth(uid)
-    if authenticated == 1:
-        # Print UID
-        print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
-        GPIO.output(29,False)
-        software.log(uid)
-    else:
-        print "Authentication error"
-        #Adding delay of 0.1 sec for user to enter
+        print "Card detected"    
+        # Get the UID of the card
+        (status,uid) = MIFAREReader.MFRC522_Anticoll()
+        print uid
+        # If we have the UID, continue
+        authenticated = software.auth(uid)
+        if authenticated == 1:
+            # Print UID
+            print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+            GPIO.output(29,False)
+            software.log(uid)
+        else:
+            print "Authentication error"
+            #Adding delay of 0.1 sec for user to enter
     time.sleep(0.1)
