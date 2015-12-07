@@ -1,7 +1,10 @@
 import MySQLdb
 def addnewentry(uid,name,rollno):
+	#Connecting to MySQL database
 	db = MySQLdb.connect("localhost","root","raspberry","local");
+	#Declaring a cursor to execute SQL queries
 	c = db.cursor()
+	#query for adding UID ,ROLLNO,NAME
 	insert = """INSERT INTO auth(uid, rollno, name) VALUES('%s',%s,'%s')"""%(uid,rollno,name)
 	# print insert
 	try:

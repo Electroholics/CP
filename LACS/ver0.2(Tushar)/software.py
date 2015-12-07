@@ -30,25 +30,35 @@ def auth(uid):
                 #Setting delimiter as space and declaring csv 
                 writer=csv.writer(fh,delimiter=" ")
                 line=[]
+                #Adding uid to log
                 line.append(''.join(key))
                 line.append("Unauth")
                 name="unauth"
                 line.append("Unauth")
+                #Adding timestamp to log
                 time=subprocess.check_output("date +%s",shell=True).strip('\n')
                 line.append(time)
                 print line
+                #Writing into csv logs
                 writer.writerow(line)
                 fh.close()
 
             elif status == 1:
+                #CASE-authenticated
                 fileName = "logs/auth.csv"
+                #opening CSV file
                 fh = open(fileName,'aw')
+                #Setting delimiter as space and declaring csv 
                 writer=csv.writer(fh,delimiter=" ")
+                #Fetching NAME of person from database
                 line=list(r_cursor.fetchone())[1:]
-                name=str(line[2])             
+                #Appending to Log
+                name=str(line[2])
+                #Adding timestamp to log             
                 time=subprocess.check_output("date +%s",shell=True).strip("\n")
                 line.append(time)
                 print line
+                #Writing into csv file
                 writer.writerow(line)
                 fh.close()
         except:
