@@ -5,17 +5,19 @@ Lab access control system is a system built on Python with Raspberry Pi.The Proj
 
 # Introduction to LACS:
 ## Basic Functionality
-1)Detects Mifare Rfid cards
-2)Displays Their UID(Function should be disabled while using in security systems like ours)
-3)Authenticates Using MySQl database
-4)Appends to log along with UNIX time stamp fetched from RTC
-5)Triggers Relay accordingly
+1. Detects Mifare Rfid cards
+2. Displays Their UID(Function should be disabled while using in security systems like ours)
+3. Authenticates Using MySQL database
+4. Appends to log along with UNIX time stamp fetched from RTC
+5. Triggers Relay accordingly
 
 ## Uses
-1)Can be used as door entry mechanism.
-2)Can be used as Attendance system.
-3)Can be used in Electronic dispenser with certain changes.
-4)Can be used in library for electronic issuing books.(Two Cards One for User other Inside the book)
+
+1. Can be used as door entry mechanism.
+2. Can be used as Attendance system.
+3. Can be used in Electronic dispenser with certain changes.
+4. Can be used in library for electronic issuing books.(Two Cards One for User other Inside the book)
+
 ..And lots of other Practical Uses.
 
 ## Setting up the system
@@ -23,7 +25,7 @@ Lab access control system is a system built on Python with Raspberry Pi.The Proj
 ###2)Connect RPi to external power supply
 ###3)Interface MFRC522 with Rpi
 ### a. Downloading and Installing official library to enable SPI communication with Python
-### **Tip-Enable SPI and I2C using raspi-config** 
+#### **Tip-Enable SPI and I2C using raspi-config** 
 #### Type the Following commands in terminal   
 `$ git clone https://github.com/lthiery/SPI-Py`  
 `$ cd SPI-Py`  
@@ -210,21 +212,21 @@ a)Create Table
 
 
 ## Hardware Requirements
-1)Raspberry PI
-2)Switch Mode Power Supply
-3)MFRC522 Reader
-4)Mifare Cards
-5)4-pin Relay
-6)16*2 lcd Display
-7)RTC ds1307
-8)Electromagnetic door lock
+1. Raspberry PI
+2. Switch Mode Power Supply
+3. MFRC522 Reader
+4. Mifare Cards
+5. 4-pin Relay
+6. 16*2 lcd Display
+7. RTC ds1307
+8. Electromagnetic door lock
 ### To Do
-Installing Three button Security
-Installing Biometric system
-Expanding into Lab control system with temp humidity sensors and live cams
-Current sensing
-PCB design for converting 12V to 3.3V
-3D model for covering the system
+1. Installing Three button Security
+2. Installing Biometric system
+3. Expanding into Lab control system with temp humidity sensors and live cams
+4. Current sensing
+6. PCB design for converting 12V to 3.3V
+7. 3D model for covering the system
 
 ### Installation
 For Complete Installation guide , Refer this [wiki](https://github.com/Electroholics/CP/wiki/LACS---Installation)
