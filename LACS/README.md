@@ -170,25 +170,33 @@ PIN35--06
  PIN13-13
  PIN11-14
 
-For more info see lcd.py
+For more info see lcd
+
 ###6)Configure your MySQL database
 `mysql -u root -p`
-`CREATE DATABASE [IF NOT EXISTS] databasename;
-a)`Create Table
-`CREATE TABLE [IF NOT EXISTS] table_name(
-        column_list
-        ) engine=table_type`
+`CREATE DATABASE [IF NOT EXISTS] databasename;`
+
+a)Create Table
+
+`CREATE TABLE [IF NOT EXISTS] table_name(`
+`column_list`
+`) engine=table_type`
+
  Our table has following columns
-`+--------+--------------+------+-----+---------+----------------+
-| Field  | Type         | Null | Key | Default | Extra          |
-+--------+--------------+------+-----+---------+----------------+
-| sno    | int(11)      | NO   | PRI | NULL    | auto_increment |
-| uid    | varchar(255) | NO   | UNI | NULL    |                |
-| rollno | int(11)      | YES  |     | NULL    |                |
-| name   | varchar(255) | YES  |     | NULL    |                |
-+--------+--------------+------+-----+---------+----------------+
-`
+ 
+ 
+
+| sno    | int(11)  
+| uid    | varchar(255)
+| rollno | int(11)      
+| name   | varchar(255) 
+
+
+
+
 ###7)Finally Run
+
+
 ` $ sudo python main.py`
 
 
