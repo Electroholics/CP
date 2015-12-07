@@ -169,17 +169,25 @@ Check time.csv and [realtime unixtime stamp on another device](http://timestamp.
     # 16: LCD Backlight GND
 
 Connect the following  pin of LCD to RPI
-RPI----LCD
-GND---01
-+5V   ---02
-GND---03
-PIN37---04
-GND---05
-PIN35--06
- PIN33--11
- PIN15-12
- PIN13-13
- PIN11-14
+`RPI----LCD`
+
+`GND---01`
+
+`+5V   ---02`
+
+`GND---03`
+
+`PIN37---04`
+
+`GND---05`
+
+`PIN35--06`
+
+` PIN33--11`
+
+` PIN15-12`
+ `PIN13-13`
+ `PIN11-14`
 
 For more info see lcd
 
