@@ -234,6 +234,9 @@ a)Create Table
 6. 16*2 lcd Display
 7. RTC ds1307
 8. Electromagnetic door lock
+
+
+
 ### To Do
 1. Installing Three button Security
 2. Installing Biometric system
