@@ -5,17 +5,19 @@ Lab access control system is a system built on Python with Raspberry Pi.The Proj
 
 # Introduction to LACS:
 ## Basic Functionality
-1)Detects Mifare Rfid cards
-2)Displays Their UID(Function should be disabled while using in security systems like ours)
-3)Authenticates Using MySQl database
-4)Appends to log along with UNIX time stamp fetched from RTC
-5)Triggers Relay accordingly
+1. Detects Mifare Rfid cards
+2. Displays Their UID(Function should be disabled while using in security systems like ours)
+3. Authenticates Using MySQL database
+4. Appends to log along with UNIX time stamp fetched from RTC
+5. Triggers Relay accordingly
 
 ## Uses
-1)Can be used as door entry mechanism.
-2)Can be used as Attendance system.
-3)Can be used in Electronic dispenser with certain changes.
-4)Can be used in library for electronic issuing books.(Two Cards One for User other Inside the book)
+
+1. Can be used as door entry mechanism.
+2. Can be used as Attendance system.
+3. Can be used in Electronic dispenser with certain changes.
+4. Can be used in library for electronic issuing books.(Two Cards One for User other Inside the book)
+
 ..And lots of other Practical Uses.
 
 ## Setting up the system
@@ -23,7 +25,7 @@ Lab access control system is a system built on Python with Raspberry Pi.The Proj
 ###2)Connect RPi to external power supply
 ###3)Interface MFRC522 with Rpi
 ### a. Downloading and Installing official library to enable SPI communication with Python
-### **Tip-Enable SPI and I2C using raspi-config** 
+#### **Tip-Enable SPI and I2C using raspi-config** 
 #### Type the Following commands in terminal   
 `$ git clone https://github.com/lthiery/SPI-Py`  
 `$ cd SPI-Py`  
@@ -40,17 +42,26 @@ Lab access control system is a system built on Python with Raspberry Pi.The Proj
 #### For old models try 
 `$ sudo i2cdetect -y 0`
 #### You should see something like:-
-`pi@raspberrypi ~ $ sudo i2cdetect -y 1
-     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- --
-10: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- --
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --
-70: -- -- -- -- -- -- -- --
-`
+`pi@raspberrypi ~ $ sudo i2cdetect -y 1`
+
+`     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f`
+
+`00:          -- -- -- -- -- -- -- -- -- -- -- -- --`
+
+`10: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- --`
+
+`20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --`
+
+`30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --`
+
+`40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --`
+
+`50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --`
+
+`60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --`
+
+`70: -- -- -- -- -- -- -- --`
+
 #### load up the RTC module and test by running :
 `$ sudo modprobe rtc-ds1307`
 `$ sudo bash`
@@ -158,56 +169,72 @@ Check time.csv and [realtime unixtime stamp on another device](http://timestamp.
     # 16: LCD Backlight GND
 
 Connect the following  pin of LCD to RPI
-RPI----LCD
-GND---01
-+5V   ---02
-GND---03
-PIN37---04
-GND---05
-PIN35--06
- PIN33--11
- PIN15-12
- PIN13-13
- PIN11-14
+`RPI----LCD`
 
-For more info see lcd.py
+`GND---01`
+
+`+5V   ---02`
+
+`GND---03`
+
+`PIN37---04`
+
+`GND---05`
+
+`PIN35--06`
+
+` PIN33--11`
+
+` PIN15-12`
+ `PIN13-13`
+ `PIN11-14`
+
+For more info see lcd
+
 ###6)Configure your MySQL database
 `mysql -u root -p`
-`CREATE DATABASE [IF NOT EXISTS] databasename;
-a)`Create Table
-`CREATE TABLE [IF NOT EXISTS] table_name(
-        column_list
-        ) engine=table_type`
+`CREATE DATABASE [IF NOT EXISTS] databasename;`
+
+a)Create Table
+
+`CREATE TABLE [IF NOT EXISTS] table_name(`
+`column_list`
+`) engine=table_type`
+
  Our table has following columns
-`+--------+--------------+------+-----+---------+----------------+
-| Field  | Type         | Null | Key | Default | Extra          |
-+--------+--------------+------+-----+---------+----------------+
-| sno    | int(11)      | NO   | PRI | NULL    | auto_increment |
-| uid    | varchar(255) | NO   | UNI | NULL    |                |
-| rollno | int(11)      | YES  |     | NULL    |                |
-| name   | varchar(255) | YES  |     | NULL    |                |
-+--------+--------------+------+-----+---------+----------------+
-`
+ 
+ 
+
+| sno    | int(11)  
+| uid    | varchar(255)
+| rollno | int(11)      
+| name   | varchar(255) 
+
+
+
+
 ###7)Finally Run
+
+
 ` $ sudo python main.py`
 
 
 ## Hardware Requirements
-1)Raspberry PI
-2)Switch Mode Power Supply
-3)MFRC522 Reader
-4)Mifare Cards
-5)4-pin Relay
-6)16*2 lcd Display
-7)RTC ds1307
-8)Electromagnetic door lock
+1. Raspberry PI
+2. Switch Mode Power Supply
+3. MFRC522 Reader
+4. Mifare Cards
+5. 4-pin Relay
+6. 16*2 lcd Display
+7. RTC ds1307
+8. Electromagnetic door lock
 ### To Do
-Installing Three button Security
-Installing Biometric system
-Expanding into Lab control system with temp humidity sensors and live cams
-Current sensing
-PCB design for converting 12V to 3.3V
-3D model for covering the system
+1. Installing Three button Security
+2. Installing Biometric system
+3. Expanding into Lab control system with temp humidity sensors and live cams
+4. Current sensing
+6. PCB design for converting 12V to 3.3V
+7. 3D model for covering the system
 
 ### Installation
 For Complete Installation guide , Refer this [wiki](https://github.com/Electroholics/CP/wiki/LACS---Installation)
