@@ -30,6 +30,9 @@ Lab access control system is a system built on Python with Raspberry Pi.The Proj
 `$ git clone https://github.com/lthiery/SPI-Py`  
 `$ cd SPI-Py`  
 `$ sudo python setup.py install`
+
+
+![interfaced MFRC522](https://github.com/Electroholics/CP/blob/master/LACS/ver0.2(Tushar)/fritzing_models/rfid_interface_bb.jpg)
 ### 4)Interfacing RTC with RPi
 #### Enable the Kernel modules:-
 `$ sudo nano /etc/modules`
@@ -147,6 +150,7 @@ Add line
 Check time.csv and [realtime unixtime stamp on another device](http://timestamp.1e5b.de/)
 
 `$ tail -f time.csv`
+![RTC interfaced](https://github.com/Electroholics/CP/blob/master/LACS/ver0.2(Tushar)/fritzing_models/rfid_rtc_interface_bb.jpg)
 
 ### 5)Interfacing 16*2 LCD 
 
@@ -189,7 +193,10 @@ Connect the following  pin of LCD to RPI
  `PIN13-13`
  `PIN11-14`
 
-For more info see lcd
+For more info see [lcd](https://github.com/Electroholics/CP/blob/master/LACS/ver0.2(Tushar)/lcd.py)
+
+![LCD interfaced](https://github.com/Electroholics/CP/blob/master/LACS/ver0.2(Tushar)/fritzing_models/complete_interface_bb.jpg)
+
 
 ###6)Configure your MySQL database
 `mysql -u root -p`
@@ -209,7 +216,6 @@ a)Create Table
 | uid    | varchar(255)
 | rollno | int(11)      
 | name   | varchar(255) 
-
 
 
 
