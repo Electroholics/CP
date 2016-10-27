@@ -14,5 +14,5 @@ while 1:
 	#reading data from DHT11
 	humidity,temperature=Adafruit_DHT.read_retry(sensor,pin)
 	#printing required temp and humidity
-	print "Temperature:",temp,"\nHumidity:",humidity
+	print "Temperature: ",temp,"\nHumidity: ",humidity
 	time.sleep(1)
